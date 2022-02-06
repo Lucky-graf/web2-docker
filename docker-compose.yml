@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  app-db:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=web2
+      - MYSQL_USER=myuser
+      - MYSQL_PASSWORD=mypassword
+
+  app:
+    build: .
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - app-db
+
+
+#docker-compose exec -T mysql mysql -uuser_name -ppassword database_name < dir/to/db_backup.sql
+#docker exec -it docker_app-db_1 bash -c mysql -u myuser -pmypassword  web2 < /var/files/web2.sql
+#mysql -u root -proot  -h app-db web2 < /var/web2/install/sql/web2.sql
+#docker-compose exec -T docker_app-db_1 mysql -u myuser -pmypassword  web2 < ./web2.sql
+#docker exec -it -w /var/files/ docker_app-db_1  mysql -u myuser -pmypass     word  web2 < web.sql
+#cat web2.sql | docker exec -i docker_app-db_1 /usr/bin/mysql -u root --password=root web2
