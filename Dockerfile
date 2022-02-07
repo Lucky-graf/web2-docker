@@ -54,9 +54,6 @@ RUN chmod -R 777 /var/www/web2
 RUN mv /var/www/web2/files/config.php /var/www/web2/includes/config.php
 RUN chmod -R 777 /var/www/web2/includes/config.php
 
-
-
-
 #configure apach
 RUN a2ensite $DNSNAME.conf
 RUN a2dissite 000-default.conf
