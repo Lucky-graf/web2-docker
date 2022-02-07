@@ -60,5 +60,7 @@ RUN chmod -R 777 /var/www/web2/includes/config.php
 #configure apach
 RUN a2ensite $DNSNAME.conf
 RUN a2dissite 000-default.conf
+
+#restart apache service
 RUN service apache2 restart
 
