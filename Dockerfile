@@ -30,11 +30,11 @@ RUN apt-get install -y php7.4 &&\
     apt-get install -y mysql-client
  
 #take variable
-ARG NAMESITE=web2 #"Input name your site(It is name your repository):"
-ARG GITLINK='https://github.com/Lucky-graf/web2.git'        #"Addres link on your site:"
-ARG DNSNAME=web2.cf      #"Addres domen on your site (site.com):"
-ARG EMAIL=qwe@qwe.com   #"Add your email(email@posht.com):"
-ARG USERNAME=$USER       #"Input name user: "
+ARG NAMESITE=web2 #"Input name your site"
+ARG GITLINK='https://github.com/Lucky-graf/web2.git'#"Link on your site"
+ARG DNSNAME=web2.cf   #Addres domen on your site (site.com)
+ARG EMAIL=qwe@qwe.com #Add your email(email@posht.com)
+ARG USERNAME=$USER    #Input name user
 ARG VAR='${APACHE_LOG_DIR}'
 
 
